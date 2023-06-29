@@ -1,11 +1,11 @@
 # kaltura_app_token
 
-## References:
+## References
 [Kaltura API - Application Tokens](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html)
 
 [How to Add Entitlements to Categories](https://knowledge.kaltura.com/help/how-to-add-entitlements-to-categories---kmc)
 
-### Update the following in the script:
+### Update the following in the script
 
 
 Clone this Repo to your development machine with Python 3.10+ installed:
@@ -13,7 +13,7 @@ Clone this Repo to your development machine with Python 3.10+ installed:
 git clone git@github.com:eharvey71/kaltura_app_token.git
 ```
 
-Create a settings.py in the same path as create_token.py
+Create a settings.py in the same path as create_token.py and add the following:
 ```python
 partner_id=<your partner id>
 admin_secret="<your admin secret>"
