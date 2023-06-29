@@ -5,7 +5,7 @@
 
 [How to Add Entitlements to Categories](https://knowledge.kaltura.com/help/how-to-add-entitlements-to-categories---kmc)
 
-### Update the following in the script
+### Steps for generating a Kaltura app token
 
 
 Clone this Repo to your development machine with Python 3.10+ installed:
