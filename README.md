@@ -2,6 +2,7 @@
 
 ## References:
 [Kaltura API - Application Tokens](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html)
+
 [How to Add Entitlements to Categories](https://knowledge.kaltura.com/help/how-to-add-entitlements-to-categories---kmc)
 
 ### Update the following in the script:
