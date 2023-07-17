@@ -37,14 +37,14 @@ role_name = ""
 
 # Optional - If a role is being applied to the app token creation. 
 # You can run 'python getroleid.py' to get the integer needed for app token creation.
-role_id =
+role_id = ""
 
 # Can be blank unless you're applying a privacy context to the app token creation
 # Comma separated list of privacy contexts created by a KMC admin
 privacy_context = "lceducation,lcarcheology"
 
 # Unix timestamp for the app token to expire
-token_expiry = 1703980800 #App Token to expire at 12AM, December 31st, 2023
+token_expiry = "1703980800" #App Token to expire at 12AM, December 31st, 2023
 
 # Optional - Specific user to add to creation of app token. 
 # From Kaltura's docs: This can be useful when wanting to grant particular
