@@ -1,4 +1,4 @@
-from settings import partner_id, admin_secret, userId, role_id, privacy_context, token_expiry
+from settings import partner_id, admin_secret, userId, role_id, privacy_context, token_expiry, apptoken_user
 import requests
 import json
 import pandas as pd
@@ -24,6 +24,9 @@ headers = {
 
 session_privs = ""
 
+# create the app token
+appToken = KalturaAppToken()
+
 # Set the role ID provided in settings.py, if applicable
 if role_id != "":
     session_privs = session_privs + "setrole:" + str(role_id)
@@ -32,8 +35,10 @@ if role_id != "":
 if privacy_context != "":
     session_privs = session_privs + ",privacycontext:" + privacy_context
 
-# create the app token
-appToken = KalturaAppToken()
+# Set an optional user to apply during app token creation
+if apptoken_user != "":
+    appToken.sessionUserId = apptoken_user
+
 appToken.hashType = KalturaAppTokenHashType.SHA256
 appToken.sessionPrivileges = session_privs
 appToken.expiry = token_expiry
