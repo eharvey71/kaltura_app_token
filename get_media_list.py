@@ -18,7 +18,7 @@
 # filter.freeText = "learning"
 # pager = KalturaFilterPager()
 
-#result = client.media.list(filter, pager)
+# result = client.media.list(filter, pager)
 
 import json, requests
 from pprint import pprint

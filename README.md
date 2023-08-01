@@ -66,12 +66,13 @@ token_expiry = '1703980800' #App Token to expire at 12AM, December 31st, 2023
 # From Kaltura's docs: This can be useful when wanting to grant particular users with API access and 
 # ensure they can not mask their ID as someone else while carrying API actions.
 apptoken_user = ''
+# =================================================
 
 # ================================================= Get role id from a role name
-
 # Optional - use only if you are running getroleid.py. Can be blank unless you're applying a custom role to the app token creation
 # The following can be a partial name if searching for multiple roles
 role_name = ''
+# =================================================
 
 # ================================================= Configuration for using an App Token
 # Existing App Token ID - Use this section for the following tools:
@@ -82,11 +83,13 @@ appToken=''
 atks_userId = ''
 atks_session_type = 0 # 0 = USER, 2 = ADMIN
 atks_session_privs = '' # Comma separated list of privileges
+# =================================================
 
 # =================================================
 # Storing a ks string here. All scripts will check here first and override with this value.
 # If this is blank -- Depending on the tool, the script will look for a $KALTURA_SESSION environment variable or generate a new session.
 ks=''
+# =================================================
 ```
 
 Create a Python virtual environment (Assumes Linux / MacOS):
@@ -109,3 +112,5 @@ python create_token.py
 [ ] - Add a script or include CLI / Curl command for listing current app tokens
 
 [ ] - App Token usage examples
+
+[ ] - More reuse through a common, separate function definitions file

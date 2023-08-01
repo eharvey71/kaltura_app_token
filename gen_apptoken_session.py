@@ -18,9 +18,6 @@ print("widget KS: " + widget_result.ks)
 
 hashString = hashlib.sha256(widget_result.ks.encode('ascii') + appToken.encode('ascii')).hexdigest()
 
-# Overriding default session expiration of 1 day with 1 month:
-#atks_expiry = 43800
-
 result = client.appToken.startSession(appTokenID, hashString, '', atks_session_type, atks_expiry, atks_session_privs)
 ksession = result.ks
 print("\nhashed token: " + hashString + "\n\nKaltura (App Token) Session: " + ksession)

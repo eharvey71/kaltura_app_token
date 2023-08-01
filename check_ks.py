@@ -1,3 +1,4 @@
+# Checking the KS expiration date and pertinent information
 from KalturaClient import *
 from KalturaClient.Plugins.Core import *
 from settings import partner_id, admin_secret, userId, ks

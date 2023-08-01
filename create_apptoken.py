@@ -57,9 +57,10 @@ json_result = json.dumps(str(result.__dict__))
 with open('token_' + result.id + '.json', 'w') as outfile:
     json.dump(json_result, outfile)
 
+# print the KS used to create the app token
 print('Kaltura Admin Session Used: ' + ks)
 print('App Token Session privileges applied: ' + result.sessionPrivileges)
 
-# print the app token, app token ID, and expiration
+# print the app token, app token ID
 print('App Token: ' + result.token)
 print('App Token ID: ' + result.id)
