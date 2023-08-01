@@ -1,4 +1,4 @@
-# kaltura_app_token
+# Kaltura App Token - tools for generating and using app tokens
 
 ## References
 Visit my blog for more details on this and similar tools: [edutechdev.com](https://edutechdev.com/)
