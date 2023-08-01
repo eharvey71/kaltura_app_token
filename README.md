@@ -1,7 +1,7 @@
 # kaltura_app_token
 
 ## References
-Visit my blog for more details on this and similar tools: [edtechdev.com](https://edtechdev.com/)
+Visit my blog for more details on this and similar tools: [edutechdev.com](https://edutechdev.com/)
 
 [Kaltura API - Application Tokens](https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/application-tokens.html)
 
