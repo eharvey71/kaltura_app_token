@@ -24,32 +24,69 @@ git clone git@github.com:eharvey71/kaltura_app_token.git
 
 Create a settings.py in the same path as create_token.py and add the following:
 ```python
-# Kaltura PID and Admin Secret
+# Kaltura Partner ID (PID). This is the Kaltura customer ID, tied to their Kaltura environment.
+#partner_id=123456
 partner_id=
-admin_secret=""
 
-# Optional - The user ID of the KMC Admin who will create the app token
-userId = ""
+# ================================================= App Token Creation
+# Kaltura Admin Secret - Do not share your admin secret with anyone or commit to a GitHub repo.
+# This is only needed to create an app token, where an admin session is required.
+admin_secret=''
 
-# Can be blank unless you're applying a custom role to the app token creation
-# The following can be a partial name if searching for multiple roles
-role_name = ""
+# Optional - The user ID of the KMC Admin who will create the app token.
+userId = ''
 
-# Optional - If a role is being applied to the app token creation. 
-# You can run 'python getroleid.py' to get the integer needed for app token creation.
-role_id = ""
+# Optional - If a role is being applied to the app token creation. You can run 'python getroleid.py' to get the integer needed for app token creation.
+role_id = ''
 
-# Can be blank unless you're applying a privacy context to the app token creation
+# Optional - Set Widget Session. privilege to the KS to tell the server that this KS was generated for player use only, 
+# which will tell the server to make a distinction between a regular USER session and a “PLAYER” session.
+# Set to 1 to enable. Can be blank unless you're applying a widget session to the app token creation.
+widget_session = ''
+
+# Optional - Forces entitlement checks.
+# Note: there is a setting on account level (configured in the admin console) that determines the default entitlement enforcement
+# Set to 1 to enable. Can be blank unless you're applying an entitlement check to the app token creation.
+enable_entitlement = ''
+
+# Optional - Restrict API calls to a specific API endpoint. 
+# Example: /api_v3/service/media/*
+# Allows access to only the caption asset enpoint. 
+# Can be blank unless you're applying a URI restriction to the app token creation.
+uri_restrict = ''
+
+# Optional - Can be blank unless you're applying a privacy context to the app token creation
 # Comma separated list of privacy contexts created by a KMC admin
-privacy_context = "lceducation,lcarcheology"
+privacy_context = ''
 
-# Unix timestamp for the app token to expire
-token_expiry = "1703980800" #App Token to expire at 12AM, December 31st, 2023
+# Optional - Unix timestamp for the app token to expire
+token_expiry = '1703980800' #App Token to expire at 12AM, December 31st, 2023
 
 # Optional - Specific user to add to creation of app token. 
-# From Kaltura's docs: This can be useful when wanting to grant particular
-# users with API access and ensure they can not mask their ID as someone else while carrying API actions.
-apptoken_user = ""
+# From Kaltura's docs: This can be useful when wanting to grant particular users with API access and 
+# ensure they can not mask their ID as someone else while carrying API actions.
+apptoken_user = ''
+
+# ================================================= Get role id from a role name
+
+# Optional - use only if you are running getroleid.py. Can be blank unless you're applying a custom role to the app token creation
+# The following can be a partial name if searching for multiple roles
+role_name = ''
+
+# ================================================= Configuration for using an App Token
+# Existing App Token ID - Use this section for the following tools:
+# - gen_apptoken_session.py
+appTokenID = ''
+atks_expiry = 86400
+appToken=''
+atks_userId = ''
+atks_session_type = 0 # 0 = USER, 2 = ADMIN
+atks_session_privs = '' # Comma separated list of privileges
+
+# =================================================
+# Storing a ks string here. All scripts will check here first and override with this value.
+# If this is blank -- Depending on the tool, the script will look for a $KALTURA_SESSION environment variable or generate a new session.
+ks=''
 ```
 
 Create a Python virtual environment (Assumes Linux / MacOS):
